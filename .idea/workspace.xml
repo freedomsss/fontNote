@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56fa9c07-3457-4df6-83ea-7ba477950464" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js/javascript高级程序设计/第六章/createObject.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js基础学习/call_apply_bind.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/javascript高级程序设计/第六章/创建对象.md" beforeDir="false" afterPath="$PROJECT_DIR$/js/javascript高级程序设计/第六章/创建对象.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/廖雪峰js基础教程学习/数据类型.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/js基础学习/数据类型.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/图片上传.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,16 +30,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/js基础学习/call_apply_bind.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
+            <state relative-caret-position="1239">
               <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/css垂直居中技巧.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-756" />
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/图片上传.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="588">
+                <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+              </first_editor>
+              <second_editor />
+            </state>
           </provider>
         </entry>
       </file>
@@ -69,6 +75,7 @@
         <option value="$PROJECT_DIR$/js/javascript高级程序设计/第六章/创建对象.md" />
         <option value="$PROJECT_DIR$/js/javascript高级程序设计/第六章/createObject.js" />
         <option value="$PROJECT_DIR$/js/js基础学习/call_apply_bind.js" />
+        <option value="$PROJECT_DIR$/js/图片上传.md" />
       </list>
     </option>
   </component>
@@ -95,23 +102,12 @@
             <path>
               <item name="frontNote" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="css" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="frontNote" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="html" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="frontNote" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="frontNote" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="js基础学习" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -167,11 +163,12 @@
       <workItem from="1545181302643" duration="11698000" />
       <workItem from="1545267836509" duration="10655000" />
       <workItem from="1545645657553" duration="635000" />
+      <workItem from="1546068491887" duration="561000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20189000" />
+    <option name="totallyTimeSpent" value="20750000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -286,14 +283,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/js基础学习/call_apply_bind.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
+        <state relative-caret-position="1239">
           <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/css垂直居中技巧.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-756" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/图片上传.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="588">
+            <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+          </first_editor>
+          <second_editor />
+        </state>
       </provider>
     </entry>
   </component>
