@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>fire</title>
+  <style>
+    body{
+      background-color: #000;
+    }
+    .fire-container{
+      position: relative;
+      width: 384px;
+      height: 300px;
+      margin: 0 auto;
+      background-color: #000;
+    }
+    .fire {
+      width: 0;
+      height: 0;
+      border-radius: 45%;
+      box-sizing: border-box;
+      border: 100px solid #000;
+      border-bottom: 100px solid transparent;
+      background-color: #b5932f;
+      transform: scaleX(.4);
+      filter: blur(20px) contrast(30); // 关键代码css滤镜
+      position: absolute;
+      left: 50%;
+    }
+  </style>
+  <script></script>
+</head>
+<body>
+<div class="fire-container">
+  <div class="fire">
+    <div class="g-dot"></div>
+  </div>
+</div>
+</body>
+</html>
