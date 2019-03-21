@@ -1,0 +1,13 @@
+<view class="img-container">
+  <image
+    src="{{defaultImage}}"
+    wx:if="{{!finishLoadImg}}"
+    class="{{finishLoadImg ? 'hiddenImg' : 'showImg'}}"
+  ></image>
+  <image
+    src="{{originalImage}}"
+    binderror="loadErr"
+    bindload="finishLoad"
+    class="{{finishLoadImg ? 'showImg' : 'hiddenImg'}}"
+  ></image>
+</view>
