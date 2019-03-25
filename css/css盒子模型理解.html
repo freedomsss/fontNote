@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>css盒模型理解</title>
+  <style>
+    .box{
+      margin: 20px;
+      /*padding: 40px 80px 30px;*/
+      /*width: 100px;*/
+      /*height: 100px;*/
+      /*border: 2px solid #fe5757;*/
+      /*overflow: hidden;*/
+      position: absolute;
+    }
+    /*.box:before{*/
+      /*content: '';*/
+      /*display: table;*/
+    /*}*/
+    .box2{
+      margin: 60px;
+      padding: 40px 80px 30px;
+      /*width: 100px;*/
+      /*height: 100px;*/
+      border: 2px solid #fe5757;
+      /*position: fixed;*/
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <!--文字内容-->
+  <div class="box2">
+    文字内容2
+  </div>
+  <div class="box2">
+    文字内容2
+  </div>
+  <div class="box2">
+    文字内容2
+  </div>
+  <span>3333</span>
+  <span>3333</span>
+  <span>3333</span>
+  <span>3333</span>
+</div>
+
+</body>
+</html>
