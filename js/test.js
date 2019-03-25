@@ -56,3 +56,17 @@ function pointer (obj, path = []) {
 }
 
 // console.log(pointer(data).goods())
+
+
+function processAarray(items, process, callback) {
+  var todo = items.concat(); // 克隆原来的数组
+  setTimeout(function () {
+    process(todo.shift());
+    if (todo.length > 0){
+      setTimeout(arguments.callee, 25)
+    } else {
+      callback(items)
+    }
+  }, 25)
+}
+

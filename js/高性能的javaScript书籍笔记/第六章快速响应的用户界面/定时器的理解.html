@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>定时器的理解</title>
+</head>
+<body>
+  <button id="myButton">click me!</button>
+  <script>
+    var btn = document.getElementById('myButton');
+    btn.onclick = function () {
+      oneMethod();
+      setTimeout(() => {
+        console.log('setTimeout');
+        anotherMethod()
+
+      },100);
+      // anotherMethod();
+    };
+    function oneMethod() {
+      console.log('oneMethod')
+    }
+    function anotherMethod() {
+      setTimeout(() => {
+        console.log('anotherMethod')
+      },200);
+      // console.log('anotherMethod')
+    }
+  </script>
+</body>
+</html>

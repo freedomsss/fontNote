@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56fa9c07-3457-4df6-83ea-7ba477950464" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/css/em_rem.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/em_rem理解.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/css盒子模型理解.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/高性能的javaScript书籍笔记/第六章快速响应的用户界面/定时器的理解.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/READNE.md" beforeDir="false" afterPath="$PROJECT_DIR$/css/READNE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/toBrother.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/javascript高级程序设计/第一章/javaScript实现.md" beforeDir="false" afterPath="$PROJECT_DIR$/js/javascript高级程序设计/第二章/javaScript实现.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/test.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,34 +19,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/em_rem.html">
+        <entry file="file://$PROJECT_DIR$/js/高性能的javaScript书籍笔记/第六章快速响应的用户界面/定时器的理解.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-304">
-              <caret line="49" column="13" lean-forward="true" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/READNE.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="147">
-                <caret line="7" selection-start-line="7" selection-end-line="7" />
-              </first_editor>
-              <second_editor />
+            <state relative-caret-position="378">
+              <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/css/em_rem理解.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="756">
-                <caret line="75" column="31" lean-forward="true" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/js/test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="42" column="19" lean-forward="true" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -94,6 +76,11 @@
         <option value="$PROJECT_DIR$/css/em_rem.html" />
         <option value="$PROJECT_DIR$/css/READNE.md" />
         <option value="$PROJECT_DIR$/css/em_rem理解.md" />
+        <option value="$PROJECT_DIR$/404.html" />
+        <option value="$PROJECT_DIR$/404/404.html" />
+        <option value="$PROJECT_DIR$/js/高性能的javaScript书籍笔记/第六章快速响应的用户界面/定时器的理解.js" />
+        <option value="$PROJECT_DIR$/js/高性能的javaScript书籍笔记/第六章快速响应的用户界面/定时器的理解.html" />
+        <option value="$PROJECT_DIR$/js/test.js" />
       </list>
     </option>
   </component>
@@ -119,7 +106,20 @@
             <path>
               <item name="frontNote" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="css" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="frontNote" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="高性能的javaScript书籍笔记" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="frontNote" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="高性能的javaScript书籍笔记" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="第六章快速响应的用户界面" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -135,9 +135,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\personalProjects\frontNote\404" />
       <recent name="E:\personalProjects\frontNote\js" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\personalProjects\frontNote\404\img" />
       <recent name="E:\personalProjects\frontNote\others\小程序" />
     </key>
   </component>
@@ -153,29 +155,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.interview.js">
+  <component name="RunManager" selected="JavaScript Debug.定时器的理解.html">
+    <configuration name="定时器的理解.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/frontNote/js/高性能的javaScript书籍笔记/第六章快速响应的用户界面/定时器的理解.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="求坐标点的小算法.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/求坐标点的小算法.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="定时器的理解.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/高性能的javaScript书籍笔记/第六章快速响应的用户界面/定时器的理解.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="call_apply_bind.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/js基础学习/call_apply_bind.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="createObject.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/javascript高级程序设计/第六章/createObject.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
     <configuration name="interview.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/interview.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
-    <configuration name="oo.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/javascript高级程序设计/第六章/oo.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.定时器的理解.html" />
+        <item itemvalue="Node.js.定时器的理解.js" />
         <item itemvalue="Node.js.interview.js" />
         <item itemvalue="Node.js.求坐标点的小算法.js" />
         <item itemvalue="Node.js.call_apply_bind.js" />
-        <item itemvalue="Node.js.createObject.js" />
-        <item itemvalue="Node.js.oo.js" />
       </list>
     </recent_temporary>
   </component>
@@ -212,7 +214,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91981000" />
+    <option name="totallyTimeSpent" value="98328000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -223,7 +225,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20281996" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.37093276" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -357,9 +359,6 @@
     <entry file="file://$PROJECT_DIR$/css/oneTestCss.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/test.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/javascript时间总结.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -414,13 +413,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/css盒子模型理解.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="831">
-          <caret line="44" column="12" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/others/小程序/preLoadImg/preLoadImg.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -465,6 +457,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/404/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="8" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/css盒子模型理解.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="44" column="12" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/css盒子模型理解.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/READNE.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -478,10 +492,24 @@
     <entry file="file://$PROJECT_DIR$/css/em_rem理解.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="756">
-            <caret line="75" column="31" lean-forward="true" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
+          <first_editor relative-caret-position="399">
+            <caret line="34" selection-start-line="34" selection-end-line="34" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/高性能的javaScript书籍笔记/第六章快速响应的用户界面/定时器的理解.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="42" column="19" lean-forward="true" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
         </state>
       </provider>
     </entry>
