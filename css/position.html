@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>position定位</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .box1{
+      width: 400px;
+      height: 300px;
+      border: 1px dotted #fe5757;
+      position: relative;
+      /*top: 20px;*/
+      /*margin-top: 30px;*/
+      /*padding-top: 30px;*/
+      overflow: hidden;
+    }
+    .box2{
+      width: 100px;
+      height: 100px;
+      border: 2px dotted royalblue;
+      /*position: relative;*/
+      /*top: 20px;*/
+      margin-top: 30px;
+      margin-bottom: 20px;
+      /*padding-top: 30px;*/
+      overflow: hidden;
+      padding: 1px;
+    }
+    .box3{
+      width: 100px;
+      height: 100px;
+      border: 2px dotted rebeccapurple;
+      /*position: relative;*/
+      /*top: 20px;*/
+      margin-top: 30px;
+      overflow: hidden;
+      padding-top: 30px;
+    }
+    .container {
+       /*overflow: hidden; !* creates block formatting context *!*/
+       background-color: green;
+      position: relative;
+     }
+    .container div {
+      /*float: left;*/
+      position: absolute;
+      left: 5px;
+      background-color: lightgreen;
+      margin: 10px;
+    }
+    .container p{
+      padding-left: 140px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="box1">
+    111
+    <div class="box2">222</div>
+    <div class="box3">333</div>
+  </div>
+  <div class="container">
+    <div class="floated">
+      Floated div
+    </div>
+    <p>
+      Quae hic ut ab perferendis sit quod architecto,
+      dolor debitis quam rem provident aspernatur tempora
+      expedita.
+    </p>
+  </div>
+</body>
+</html>

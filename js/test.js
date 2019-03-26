@@ -69,4 +69,6 @@ function processAarray(items, process, callback) {
     }
   }, 25)
 }
+var arr = []
+console.log(arr.join('，'))
 

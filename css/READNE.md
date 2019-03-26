@@ -6,3 +6,6 @@
   
 [垂直居中技巧](https://github.com/freedomsss/fontNote/blob/master/css/css%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E6%8A%80%E5%B7%A7.html) 
 
+[BFC](https://juejin.im/post/59b73d5bf265da064618731d)
+
+[浏览器的渲染原理](https://baijiahao.baidu.com/s?id=1621604324911848093&wfr=spider&for=pc)
