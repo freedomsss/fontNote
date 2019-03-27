@@ -9,7 +9,8 @@ for (let i of s) {
 // console.log('set:',s); // set: Set { 1, 2, 3, 4, 5, 6 }
 // 去除数组重复成员的方法
 // console.log('set=>array:',[...s]); // set=>array: [ 1, 2, 3, 4, 5, 6 ]
-// 向set加入值的时候，不会发生类型转换，Set内部判断两个值是否不同，使用的算法叫做“same-value-zero equality”,它类似于精确等于（===），主要的区别是NAN等于自身，而精确运算符认为NAN不等于自身
+// 向set加入值的时候，不会发生类型转换，Set内部判断两个值是否不同，使用的算法叫做“same-value-zero equality”,
+// 它类似于精确等于（===），主要的区别是NAN等于自身，而精确运算符认为NAN不等于自身
 let NaNSet = new Set();
 let a = NaN;
 let b = NaN;
@@ -22,7 +23,7 @@ objSet.add({});
 objSet.add({});
 // console.log(objSet.size); // 2
 // Set实例的属性和方法
-/*
+/**
 * set结构的实例有以下属性
 * Set.prototype.constructor: 构造函数，默认是Set函数
 * Set.prototype.size:返回Set实例成员的总数
@@ -47,7 +48,7 @@ const arr = Array.from(s);
 // console.log(arr); // [ 1, 2, 3, 4, 5, 6, {} ]
 const newSet = new Set(arr);
 // console.log(newSet); // Set { 1, 2, 3, 4, 5, 6, {} }
-/*
+/**
 * 遍历操作
 * keys():返回键名的遍历器
 * values()：返回键值的遍历器
@@ -88,11 +89,11 @@ for (let item of s.entries()) {
 for (let item of s) { // Set结构默认可遍历，它的默认遍历器生成函数就是它的values方法
     // console.log(item);
 }
-/*
+/**
 * Set结构的实例与数组一样，也拥有forEach方法，用于对每个成员执行某种操作，没有返回值
 * */
 // s.forEach((values, key) => console.log(key + ':' + values));
-/*
+/**
 * 配合数组的map,filter方法可以很容易实现并集，交集，和差集。
 * */
 let aSet = new Set([1,2,3]);
