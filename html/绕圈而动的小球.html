@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+      border: 1px solid salmon;
+      border-radius: 50%;
+      position: relative;
+      transform: skewY(20deg);
+      margin: 40px;
+      perspective:150;
+      -webkit-perspective:150; /* Safari and Chrome */
+    }
+    .haorooms{
+      position: absolute;
+      top: 20px;
+      left: 20px;
+       -webkit-animation: clockwise 3s linear infinite;
+      animation: clockwise 3s linear  infinite ;
+      transform-origin: 80px 80px;
+      width: 100px;
+      height: 100px;
+    }
+    .haorooms2{
+      -webkit-animation: clockwise2 3s linear infinite;
+      animation: clockwise2 3s linear  infinite ;
+    }
+    .haorooms .em1,.haorooms .em2 {
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: red;
+      color:#fff;
+    }
+    .em1{
+      -webkit-animation: counter-clockwise 3s linear infinite;
+      animation: counter-clockwise 3s linear  infinite ;
+    }
+    .em2{
+      -webkit-animation: counter-clockwise2 3s linear infinite;
+      animation: counter-clockwise2 3s linear  infinite ;
+    }
+
+    @-webkit-keyframes clockwise{
+      0%  { -webkit-transform: rotate(0deg) ;  }
+      100%{ -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes clockwise {
+      0%  { transform: rotate(0deg) ; }
+      100%{ transform: rotate(360deg); }
+    }
+    @-webkit-keyframes clockwise2{
+      0%  { -webkit-transform: rotate(360deg) ;  }
+      100%{ -webkit-transform: rotate(0deg); }
+    }
+
+    @keyframes clockwise2 {
+      0%  { transform: rotate(360deg) ; }
+      100%{ transform: rotate(0deg); }
+    }
+
+    @-webkit-keyframes counter-clockwise {
+      0%  { -webkit-transform: rotate(360deg) ;  }
+      100%{ -webkit-transform: rotate(0deg); }
+    }
+
+    @keyframes counter-clockwise {
+      0%  { transform: rotate(360deg) ;  }
+      100%{ transform: rotate(0deg); }
+    }
+    @-webkit-keyframes counter-clockwise2 {
+      0%  { -webkit-transform: rotate(0deg) ;  }
+      100%{ -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes counter-clockwise2 {
+      0%  { transform: rotate(0deg) ;  }
+      100%{ transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <div class="haorooms"> <em class="em1">1</em></div>
+  <div class="haorooms haorooms2"> <em class="em2">2</em></div>
+</div>
+<script>
+    console.log(111)
+    function Person() {
+    }
+    var person = new Person();
+    person.name = '111'
+    console.log(Object.keys(person));
+    console.log(Object.keys(Person.prototype));
+</script>
+</body>
+</html>
+
