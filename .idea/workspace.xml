@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56fa9c07-3457-4df6-83ea-7ba477950464" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/html/带尾巴的箭头.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/绕圈而动的小球.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/javascript高级程序设计/第三章/数据类型.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/test2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/test.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/javascript高级程序设计/第三章/数据类型.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/javascript高级程序设计/第三章/数据类型.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,11 +17,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/javascript高级程序设计/第三章/数据类型.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="105">
+              <caret line="1982" column="37" selection-start-line="1982" selection-start-column="37" selection-end-line="1982" selection-end-column="37" />
+              <folding>
+                <element signature="e#13#44701#0" />
+                <element signature="n#!!block;n#filterCommonHospitals#0" />
+                <element signature="n#!!block;n#sumObj#0" />
+                <element signature="n#!!block;n#filterSpecialHospital#0" />
+                <element signature="n#!!block;n#getTotalNum#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/test2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -90,17 +104,18 @@
         <option value="$PROJECT_DIR$/js/es6_Set.js" />
         <option value="$PROJECT_DIR$/算法/数组去重.js" />
         <option value="$PROJECT_DIR$/算法/常见算法.js" />
-        <option value="$PROJECT_DIR$/js/javascript高级程序设计/第三章/数据类型.js" />
         <option value="$PROJECT_DIR$/html/带尾巴的箭头.html" />
         <option value="$PROJECT_DIR$/html/test.htm" />
+        <option value="$PROJECT_DIR$/js/javascript高级程序设计/第三章/数据类型.js" />
+        <option value="$PROJECT_DIR$/js/test2.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="20" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -118,18 +133,13 @@
             <path>
               <item name="frontNote" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="html" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="frontNote" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="frontNote" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="javascript高级程序设计" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="js基础学习" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="frontNote" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -146,7 +156,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/projects/website" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -170,11 +180,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.数据类型.js">
+  <component name="RunManager" selected="Node.js.test2.js">
     <configuration name="定时器的理解.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/frontNote/js/高性能的javaScript书籍笔记/第六章快速响应的用户界面/定时器的理解.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="数组去重.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/算法/数组去重.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="数据类型.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/javascript高级程序设计/第三章/数据类型.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="数据类型.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/javascript高级程序设计/第三章/数据类型.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="数据类型.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/javascript高级程序设计/第三章/数据类型.js" working-dir="$PROJECT_DIR$">
@@ -192,12 +208,15 @@
     <configuration name="interview.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/interview.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
+    <configuration name="test2.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/test2.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
     <configuration name="test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/test.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.数据类型.js" />
+        <item itemvalue="Node.js.test2.js" />
         <item itemvalue="Node.js.数组去重.js" />
         <item itemvalue="Node.js.test.js" />
         <item itemvalue="JavaScript Debug.定时器的理解.html" />
@@ -236,23 +255,27 @@
       <workItem from="1553476736205" duration="10442000" />
       <workItem from="1553563152970" duration="24560000" />
       <workItem from="1553822181067" duration="14678000" />
-      <workItem from="1554081874582" duration="21815000" />
+      <workItem from="1554081874582" duration="26166000" />
+      <workItem from="1556523937303" duration="4016000" />
+      <workItem from="1557127963342" duration="12469000" />
+      <workItem from="1557734524954" duration="616000" />
+      <workItem from="1558921561306" duration="2006000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159381000" />
+    <option name="totallyTimeSpent" value="182839000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1512118" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1601686" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49947312" visible="true" weight="0.17570499" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49947312" visible="true" weight="0.19197397" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -587,6 +610,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/javascript高级程序设计/第三章/数据类型.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="1982" column="37" selection-start-line="1982" selection-start-column="37" selection-end-line="1982" selection-end-column="37" />
+          <folding>
+            <element signature="e#13#44701#0" />
+            <element signature="n#!!block;n#filterCommonHospitals#0" />
+            <element signature="n#!!block;n#sumObj#0" />
+            <element signature="n#!!block;n#filterSpecialHospital#0" />
+            <element signature="n#!!block;n#getTotalNum#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/小数相加减方法.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -597,10 +634,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/javascript高级程序设计/第三章/数据类型.js">
+    <entry file="file://$PROJECT_DIR$/js/test2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="84">
+          <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
         </state>
       </provider>
     </entry>
