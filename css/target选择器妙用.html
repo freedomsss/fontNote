@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    main{
+      width: 600px;
+      display: flex;
+      margin-top: 20px;
+    }
+    div{
+      width: 100px;
+      height: 100px;
+      background-color: #fe5757;
+      margin-right: 10px;
+      transition: flex 1s;
+    }
+    div:target{
+      flex: 1;
+      background-color: aquamarine;
+    }
+  </style>
+</head>
+<body>
+<a href="#1">11</a>
+<a href="#2">22</a>
+<a href="#3">33</a>
+<main>
+  <div id="1"></div>
+  <div id="2"></div>
+  <div id="3"></div>
+</main>
+</body>
+</html>
