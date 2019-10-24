@@ -1,6 +1,6 @@
 // 根据当前点索引值找到数组中不一样的点的起始点跟终止点
 var x = [1,1,2,2,3,3,3,5,5,8,8];
-var index = 9;
+var index = 0;
 
 function getLastTime(index) {
   var sIndex = 0;
@@ -31,8 +31,8 @@ function getLastTime(index) {
   };
 }
 
-// console.log(getLastTime(index));
-getLastTime(index);
+console.log(getLastTime(index));
+// getLastTime(index);
 
 // console.log('MS11-B0D59DF795D2 SN:MS110CA9430019'.substring(0, 17));
 
@@ -67,11 +67,11 @@ getLastTime(index);
 // console.log('0点：', time2Month(test2));
 // console.log('test30点：', time2Month(test3));
 
-const result = [];
-function  showData(result) {
-  let showData = [];
-  // .....
-  console.log(showData);
-}
-
-showData(result);
+// const result = [];
+// function  showData(result) {
+//   let showData = [];
+//   // .....
+//   console.log(showData);
+// }
+//
+// showData(result);
