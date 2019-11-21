@@ -1,7 +1,7 @@
-// const time = ["14:00", "14:00", "14:00", "14:05", "14:05", "14:05", "14:10", "14:10", "14:10", "14:10", "14:10", "14:11"];
-const time = ["14:00"];
-// const frequency = [0, 0, 0, 0, 2.48, 0, 4, 2.48, 0, 0, 0, 1];
-const frequency = [0];
+const time = ["14:00", "14:00", "14:00", "14:05", "14:05", "14:05", "14:10", "14:10", "14:10", "14:10", "14:10", "14:11"];
+// const time = ["14:00"];
+const frequency = [0, 0, 0, 0, 2.48, 0, 4, 1, 1, 0, 0, 1];
+// const frequency = [0];
 
 /**
  * 取出不一样的点的索引值，记录起始点跟终点的索引值
@@ -49,19 +49,19 @@ function getResultArr(YArr, XArr) {
     } else {
       for (let i = item[0]; i <= item[1]; i++) {
         currentYArr.push(YArr[i]);
+        currentYArr = currentYArr.filter((sItem) => { // 数组去0
+          return sItem !== 0;
+        });
+        if (!currentYArr.length) {
+          currentYArr.push(0);
+        }
       }
     }
-    let _filterYArr = filterArr(currentYArr); // 数组去重
-    if (_filterYArr.length > 1) {
-      _filterYArr = _filterYArr.filter((sItem) => { // 数组去0
-        return sItem !== 0;
-      });
-    }
-    for (let i = 0; i < _filterYArr.length; i++) {
+    for (let i = 0; i < currentYArr.length; i++) {
       currentXArr.push(XArr[item[0]]);
     }
     xResult.push(...currentXArr);
-    yResult.push(..._filterYArr);
+    yResult.push(...currentYArr);
   });
   return {
     xResult,
@@ -70,28 +70,28 @@ function getResultArr(YArr, XArr) {
 }
 
 // 数组去重
-function filterArr(arr) {
-  const len = arr.length;
-  if (Object.prototype.toString.call(arr) !== '[object Array]' || !len) {
-    return [];
-  }
-  let newArr = [];
-  for (let i = 0; i < len; i++) {
-    if (!isInArray(newArr, arr[i])) {
-      newArr.push(arr[i])
-    }
-  }
-  return newArr
-}
-
-function isInArray(arr,value){
-  for(let i = 0; i < arr.length; i++){
-    if(value === arr[i]){
-      return true;
-    }
-  }
-  return false;
-}
+// function filterArr(arr) {
+//   const len = arr.length;
+//   if (Object.prototype.toString.call(arr) !== '[object Array]' || !len) {
+//     return [];
+//   }
+//   let newArr = [];
+//   for (let i = 0; i < len; i++) {
+//     if (!isInArray(newArr, arr[i])) {
+//       newArr.push(arr[i])
+//     }
+//   }
+//   return newArr
+// }
+//
+// function isInArray(arr,value){
+//   for(let i = 0; i < arr.length; i++){
+//     if(value === arr[i]){
+//       return true;
+//     }
+//   }
+//   return false;
+// }
 
 // console.log(getIndexArr(time));
 // getResultArr(frequency, frequency);
