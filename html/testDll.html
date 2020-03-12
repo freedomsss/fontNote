@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" onclick="say()" value="测试">
+<script type="text/javascript">
+    function say(){
+        console.log(1111);
+        var obj = new ActiveXObject("SayHelloProject.dll");
+        var result = obj.SayHello();
+        alert(result);
+    }
+</script>
+</body>
+</html>

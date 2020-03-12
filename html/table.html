@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        table.gridtable {
+            font-family: verdana,arial,sans-serif;
+            font-size:11px;
+            color:#333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+            margin: 40px auto;
+        }
+        table.gridtable th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+        }
+        table.gridtable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+        }
+        caption {
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: bolder;
+        }
+        #main{
+            margin: 40px auto;
+        }
+    </style>
+</head>
+<body>
+<table class="gridtable" id="table1">
+    <caption align="top">我是表格标题</caption>
+    <thead>
+        <tr>
+            <th>hostname</th>
+            <th>cpu</th>
+            <th>memory</th>
+            <th>status</th>
+            <th>creationtime</th>
+            <th>expiredtime</th>
+            <th>ostype</th>
+            <th>instancenetworktype</th>
+            <th>publicipaddress</th>
+            <th>inneripaddress</th>
+            <th>bandwidth</th>
+        </tr>
+    </thead>
+<!--    <tbody id="table1"></tbody>-->
+</table>
+<div id="main" style="width: 600px;height:400px;"></div>
+<script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+<script>
+    var data = [
+        {
+            "model":"src.host",
+            "pk":1,
+            "fields":{
+                "hostname":"iZm5e3ljqm32lxgp2d79oxZ",
+                "cpu":2,
+                "memory":8192,
+                "status":"Running",
+                "creationtime":"2019-04-03T09:11:00",
+                "expiredtime":"2020-01-04T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"classic",
+                "publicipaddress":"118.190.143.113",
+                "inneripaddress":"10.30.185.16",
+                "bandwidth":1,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.6 64位",
+                "createAt":"2019-12-02T17:41:24.051",
+                "updateAt":"2019-12-02T17:43:57.998"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":2,
+            "fields":{
+                "hostname":"iZm5e9sau96e6jyrozb4thZ",
+                "cpu":2,
+                "memory":8192,
+                "status":"Running",
+                "creationtime":"2019-04-03T09:11:00",
+                "expiredtime":"2020-01-04T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"classic",
+                "publicipaddress":"121.42.251.41",
+                "inneripaddress":"10.29.81.5",
+                "bandwidth":1,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.6 64位",
+                "createAt":"2019-12-02T17:41:55.592",
+                "updateAt":"2019-12-02T17:43:58.050"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":3,
+            "fields":{
+                "hostname":"GYENNO-TFS01",
+                "cpu":4,
+                "memory":16384,
+                "status":"Running",
+                "creationtime":"2019-02-25T18:19:00",
+                "expiredtime":"2019-12-26T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"classic",
+                "publicipaddress":"118.190.142.94",
+                "inneripaddress":"10.29.88.49",
+                "bandwidth":5,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.6 64位",
+                "createAt":"2019-12-02T17:41:55.638",
+                "updateAt":"2019-12-02T17:43:58.098"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":4,
+            "fields":{
+                "hostname":"iZm5efuqggczshnioa01eoZ",
+                "cpu":4,
+                "memory":16384,
+                "status":"Running",
+                "creationtime":"2019-02-25T17:28:00",
+                "expiredtime":"2019-12-26T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"classic",
+                "publicipaddress":"118.190.137.130",
+                "inneripaddress":"10.30.181.75",
+                "bandwidth":5,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.6 64位",
+                "createAt":"2019-12-02T17:41:55.680",
+                "updateAt":"2019-12-02T17:43:58.149"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":5,
+            "fields":{
+                "hostname":"GYENNO-PM02",
+                "cpu":4,
+                "memory":16384,
+                "status":"Running",
+                "creationtime":"2019-01-24T09:12:00",
+                "expiredtime":"2020-01-25T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"classic",
+                "publicipaddress":"118.190.168.32",
+                "inneripaddress":"10.29.91.194",
+                "bandwidth":5,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.6 64位",
+                "createAt":"2019-12-02T17:41:55.738",
+                "updateAt":"2019-12-02T17:43:58.201"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":6,
+            "fields":{
+                "hostname":"GYENNO-PM01",
+                "cpu":4,
+                "memory":16384,
+                "status":"Running",
+                "creationtime":"2019-01-23T18:44:00",
+                "expiredtime":"2020-01-24T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"classic",
+                "publicipaddress":"118.190.141.141",
+                "inneripaddress":"10.30.184.149",
+                "bandwidth":5,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.6 64位",
+                "createAt":"2019-12-02T17:41:55.784",
+                "updateAt":"2019-12-02T17:43:58.259"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":7,
+            "fields":{
+                "hostname":"GYENNO-MCR01",
+                "cpu":8,
+                "memory":32768,
+                "status":"Running",
+                "creationtime":"2019-01-23T17:33:00",
+                "expiredtime":"2020-01-24T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"classic",
+                "publicipaddress":"118.190.239.160",
+                "inneripaddress":"10.30.186.10",
+                "bandwidth":1,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.6 64位",
+                "createAt":"2019-12-02T17:41:55.831",
+                "updateAt":"2019-12-02T17:43:58.307"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":8,
+            "fields":{
+                "hostname":"GYENNO-T01",
+                "cpu":4,
+                "memory":16384,
+                "status":"Running",
+                "creationtime":"2018-10-09T14:36:00",
+                "expiredtime":"2020-01-10T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"classic",
+                "publicipaddress":"118.190.113.243",
+                "inneripaddress":"10.31.46.123",
+                "bandwidth":5,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.4 64位",
+                "createAt":"2019-12-02T17:41:55.882",
+                "updateAt":"2019-12-02T17:43:58.357"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":9,
+            "fields":{
+                "hostname":"GYENNO-PRE",
+                "cpu":4,
+                "memory":16384,
+                "status":"Running",
+                "creationtime":"2018-07-06T14:06:00",
+                "expiredtime":"2020-01-07T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"classic",
+                "publicipaddress":"118.190.233.37",
+                "inneripaddress":"10.30.178.122",
+                "bandwidth":5,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.4 64位",
+                "createAt":"2019-12-02T17:41:55.925",
+                "updateAt":"2019-12-02T17:43:58.409"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":10,
+            "fields":{
+                "hostname":"GYENNO-SSH",
+                "cpu":4,
+                "memory":16384,
+                "status":"Running",
+                "creationtime":"2018-03-20T18:25:00",
+                "expiredtime":"2019-12-21T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"classic",
+                "publicipaddress":"47.104.59.21",
+                "inneripaddress":"10.66.158.125",
+                "bandwidth":10,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.4 64位",
+                "createAt":"2019-12-02T17:41:55.973",
+                "updateAt":"2019-12-02T17:43:58.459"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":11,
+            "fields":{
+                "hostname":"GYENNO-P01",
+                "cpu":4,
+                "memory":16384,
+                "status":"Running",
+                "creationtime":"2018-01-12T17:51:00",
+                "expiredtime":"2020-01-13T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"classic",
+                "publicipaddress":"118.190.91.158",
+                "inneripaddress":"10.31.81.135",
+                "bandwidth":5,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.4 64位",
+                "createAt":"2019-12-02T17:41:56.025",
+                "updateAt":"2019-12-02T17:43:58.506"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":12,
+            "fields":{
+                "hostname":"GYENNO-TM01",
+                "cpu":4,
+                "memory":16384,
+                "status":"Running",
+                "creationtime":"2017-11-11T23:11:00",
+                "expiredtime":"2020-02-12T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"classic",
+                "publicipaddress":"118.190.132.73",
+                "inneripaddress":"10.30.191.136",
+                "bandwidth":100,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.4 64位",
+                "createAt":"2019-12-02T17:41:56.069",
+                "updateAt":"2019-12-02T17:43:58.559"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":13,
+            "fields":{
+                "hostname":"GYENNO-P02",
+                "cpu":8,
+                "memory":32768,
+                "status":"Running",
+                "creationtime":"2017-02-28T11:37:00",
+                "expiredtime":"2020-01-30T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"classic",
+                "publicipaddress":"118.190.45.154",
+                "inneripaddress":"10.30.60.82",
+                "bandwidth":5,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.6 64位",
+                "createAt":"2019-12-02T17:41:56.112",
+                "updateAt":"2019-12-02T17:43:58.607"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":14,
+            "fields":{
+                "hostname":"GYENNO-T02",
+                "cpu":4,
+                "memory":16384,
+                "status":"Running",
+                "creationtime":"2016-04-27T09:43:00",
+                "expiredtime":"2020-01-28T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"classic",
+                "publicipaddress":"120.27.25.118",
+                "inneripaddress":"10.30.183.161",
+                "bandwidth":5,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.4 64位",
+                "createAt":"2019-12-02T17:41:56.163",
+                "updateAt":"2019-12-02T17:43:58.661"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":15,
+            "fields":{
+                "hostname":"WINS2008-OA",
+                "cpu":4,
+                "memory":8192,
+                "status":"Running",
+                "creationtime":"2015-10-19T17:19:00",
+                "expiredtime":"2019-12-20T00:00:00",
+                "ostype":"windows",
+                "instancenetworktype":"classic",
+                "publicipaddress":"118.190.72.225",
+                "inneripaddress":"10.30.173.178",
+                "bandwidth":5,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"Windows Server  2008 R2 企业版 64位中文版",
+                "createAt":"2019-12-02T17:41:56.231",
+                "updateAt":"2019-12-02T17:43:58.712"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":16,
+            "fields":{
+                "hostname":"GT-DB-02",
+                "cpu":4,
+                "memory":16384,
+                "status":"Running",
+                "creationtime":"2019-10-10T18:10:00",
+                "expiredtime":"2020-04-11T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"vpc",
+                "publicipaddress":"",
+                "inneripaddress":"192.168.0.64",
+                "bandwidth":0,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.6 64位",
+                "createAt":"2019-12-02T17:41:56.807",
+                "updateAt":"2019-12-02T17:43:59.119"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":17,
+            "fields":{
+                "hostname":"GT-DB-01",
+                "cpu":4,
+                "memory":16384,
+                "status":"Running",
+                "creationtime":"2019-10-10T18:10:00",
+                "expiredtime":"2020-04-11T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"vpc",
+                "publicipaddress":"47.95.115.180",
+                "inneripaddress":"192.168.0.63",
+                "bandwidth":50,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.6 64位",
+                "createAt":"2019-12-02T17:43:59.180",
+                "updateAt":"2019-12-02T17:43:59.180"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":18,
+            "fields":{
+                "hostname":"GT-W69",
+                "cpu":4,
+                "memory":32768,
+                "status":"Running",
+                "creationtime":"2019-10-10T18:10:00",
+                "expiredtime":"2020-04-11T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"vpc",
+                "publicipaddress":"",
+                "inneripaddress":"192.168.0.69",
+                "bandwidth":0,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.6 64位",
+                "createAt":"2019-12-02T17:43:59.254",
+                "updateAt":"2019-12-02T17:43:59.254"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":19,
+            "fields":{
+                "hostname":"GT-W65",
+                "cpu":4,
+                "memory":32768,
+                "status":"Running",
+                "creationtime":"2019-10-10T18:10:00",
+                "expiredtime":"2020-04-11T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"vpc",
+                "publicipaddress":"",
+                "inneripaddress":"192.168.0.65",
+                "bandwidth":0,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.6 64位",
+                "createAt":"2019-12-02T17:43:59.320",
+                "updateAt":"2019-12-02T17:43:59.320"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":20,
+            "fields":{
+                "hostname":"GT-W66",
+                "cpu":4,
+                "memory":32768,
+                "status":"Running",
+                "creationtime":"2019-10-10T18:10:00",
+                "expiredtime":"2020-04-11T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"vpc",
+                "publicipaddress":"",
+                "inneripaddress":"192.168.0.66",
+                "bandwidth":0,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.6 64位",
+                "createAt":"2019-12-02T17:43:59.385",
+                "updateAt":"2019-12-02T17:43:59.385"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":21,
+            "fields":{
+                "hostname":"GT-W68",
+                "cpu":4,
+                "memory":32768,
+                "status":"Running",
+                "creationtime":"2019-10-10T18:10:00",
+                "expiredtime":"2020-04-11T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"vpc",
+                "publicipaddress":"",
+                "inneripaddress":"192.168.0.68",
+                "bandwidth":0,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.6 64位",
+                "createAt":"2019-12-02T17:43:59.456",
+                "updateAt":"2019-12-02T17:43:59.456"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":22,
+            "fields":{
+                "hostname":"GT-W67",
+                "cpu":4,
+                "memory":32768,
+                "status":"Running",
+                "creationtime":"2019-10-10T18:10:00",
+                "expiredtime":"2020-04-11T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"vpc",
+                "publicipaddress":"",
+                "inneripaddress":"192.168.0.67",
+                "bandwidth":0,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.6 64位",
+                "createAt":"2019-12-02T17:43:59.522",
+                "updateAt":"2019-12-02T17:43:59.522"
+            }
+        },
+        {
+            "model":"src.host",
+            "pk":23,
+            "fields":{
+                "hostname":"GT-W62",
+                "cpu":4,
+                "memory":32768,
+                "status":"Running",
+                "creationtime":"2019-10-10T18:10:00",
+                "expiredtime":"2020-04-11T00:00:00",
+                "ostype":"linux",
+                "instancenetworktype":"vpc",
+                "publicipaddress":"",
+                "inneripaddress":"192.168.0.62",
+                "bandwidth":0,
+                "dockerversion":null,
+                "kernelversion":null,
+                "osversion":null,
+                "osname":"CentOS  7.6 64位",
+                "createAt":"2019-12-02T17:43:59.603",
+                "updateAt":"2019-12-02T17:43:59.603"
+            }
+        }
+    ];
+    var table1 = document.getElementById('table1');
+    var len = data.length;
+    var childs = '';
+    let tempNode = document.createElement('tbody');
+    for (var i = 0; i < len; i++){
+        childs += '<tr>\n' +
+            '<td>' + data[i].fields.hostname +'</td>\n' +
+            '<td>' + data[i].fields.cpu +'</td>\n' +
+            '<td>' + data[i].fields.memory +'</td>\n' +
+            '<td>' + data[i].fields.status +'</td>\n' +
+            '<td>' + data[i].fields.creationtime +'</td>\n' +
+            '<td>' + data[i].fields.expiredtime +'</td>\n' +
+            '<td>' + data[i].fields.ostype +'</td>\n' +
+            '<td>' + data[i].fields.instancenetworktype +'</td>\n' +
+            '<td>' + data[i].fields.publicipaddress +'</td>\n' +
+            '<td>' + data[i].fields.inneripaddress +'</td>\n' +
+            '<td>' + data[i].fields.bandwidth +'</td>\n' +
+            '</tr>';
+    }
+    if (len === 0) {
+        childs = '<tr>\n' +
+            '<td colspan="11">暂无数据</td>\n' +
+            '</tr>';
+    }
+    console.log(childs);
+    tempNode.innerHTML = childs;
+    table1.appendChild(tempNode);
+</script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: 'ECharts 入门示例'
+        },
+        tooltip: {},
+        legend: {
+            data:['销量']
+        },
+        xAxis: {
+            data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+        },
+        yAxis: {},
+        series: [{
+            name: '销量',
+            type: 'bar',
+            data: [5, 20, 36, 10, 10, 20]
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</body>
+</html>
