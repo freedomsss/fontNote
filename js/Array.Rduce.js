@@ -72,3 +72,4 @@ let result = arr.sort().reduce((init, current) => {
     return init;
 },[]);
 console.log(result);
+
