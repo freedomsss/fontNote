@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #input_text{
+      opacity:0;
+      position:absolute;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <p id="p1">复制文字</p >
+  <button onclick="copy()">点击复制</button>
+  <input type="text" id="input_text">
+</div>
+<script>
+  function copy() {
+    var copy_text = document.getElementById("p1").innerText;
+    var input_text =document.getElementById("input_text");
+    input_text.value = copy_text;
+    input_text.select();
+    document.execCommand("Copy");
+    alert("复制成功!");
+  }
+</script>
+</body>
+</html>
