@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    body{
+      padding: 40px;
+    }
+    /**,*/
+    .active::before,
+    .active::after {
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+    .box{
+      width: 400px;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      border: 5px solid #fff;
+      box-shadow: 0 0 5px #ddd;
+      margin: 1em;
+    }
+    .active{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      text-align: center;
+      font-weight: bold;
+      width: 100%;
+      height: 100%;
+      display: table;
+    }
+    .active div{
+      display: table-cell;
+      vertical-align: middle;
+      position: relative;
+      top: 20px;
+      opacity: 0;
+      color: #2c3e50;
+      text-transform: uppercase;
+    }
+    .active div:after {
+      position: absolute;
+      content: "";
+      left: 0;
+      right: 0;
+      bottom: 40%;
+      text-align: center;
+      margin: auto;
+      width: 0;
+      height: 2px;
+      background: #2c3e50;
+    }
+    .box img {
+      width: 100%;
+      height: 100%;
+      transition: all 0.5s linear;
+      transform: scale3d(1, 1, 1);
+    }
+    .box:hover .active {
+      background: rgba(255, 255, 255, 0.3);
+    }
+    .active:hover div {
+      opacity: 1;
+      top: 0;
+    }
+    .active:hover div:after {
+      width: 50%;
+    }
+    .box:hover img {
+      transform: scale3d(1.2, 1.2, 1);
+    }
+    .button{
+      cursor: pointer;
+      margin-top: 12px;
+      text-align: center;
+      color: #fff;
+      width: 160px;
+      position: relative;
+      background-color: #3bb3e0;
+      border-radius: 5px;
+      padding: 4px 8px;
+      font-size: 16px;
+      background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(44,160,202)),
+        color-stop(1, rgb(62,184,229))
+      );
+      box-shadow: inset 0 1px 0 #2ab7ec, 0 5px 0 0 #156785, 0 10px 5px #999;
+    }
+    .button:active{
+      top:2px;
+      background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(62,184,229)), color-stop(1, rgb(44,160,202)) );
+      box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <img src="../images/med@3x.webp" alt="">
+  <div class="active">
+    <div>Thumbnail Caption</div>
+  </div>
+</div>
+<div class="demo"><button class="rkmd-btn btn-fab-mini btn-pink ripple-effect"><i class="material-icons">favorite_border</i></button></div>
+<div class="demo"><button class="rkmd-btn btn-white ripple-effect ripple-dark"><i class="material-icons">file_download</i>Download</button></div>
+<div class="button">Download</div>
+
+<script src="./jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.ripple-effect').rkmd_rippleEffect();
+  });
+
+  (function($) {
+    $.fn.rkmd_rippleEffect = function() {
+      var btn, self, ripple, size, rippleX, rippleY, eWidth, eHeight;
+
+      btn = $(this).not('[disabled], .disabled');
+
+      btn.on('mousedown', function(e) {
+        self = $(this);
+
+        // Disable right click
+        if(e.button === 2) {
+          return false;
+        }
+
+        if(self.find('.ripple').length === 0) {
+          self.prepend('<span class="ripple"></span>');
+        }
+        ripple = self.find('.ripple');
+        ripple.removeClass('animated');
+
+        eWidth = self.outerWidth();
+        eHeight = self.outerHeight();
+        size = Math.max(eWidth, eHeight);
+        ripple.css({'width': size, 'height': size});
+
+        rippleX = parseInt(e.pageX - self.offset().left) - (size / 2);
+        rippleY = parseInt(e.pageY - self.offset().top) - (size / 2);
+
+        ripple.css({ 'top': rippleY +'px', 'left': rippleX +'px' }).addClass('animated');
+
+        setTimeout(function() {
+          ripple.remove();
+        }, 800);
+
+      });
+    };
+  }(jQuery));
+</script>
+</body>
+</html>

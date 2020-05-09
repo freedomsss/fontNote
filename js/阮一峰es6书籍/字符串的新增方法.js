@@ -21,9 +21,28 @@ is32Bit("a"); // false
 // includes()：返回布尔值，表示是否找到了参数字符串。
 // startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。
 // endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。
-
+// 这三个方法都支持第二个参数，表示开始搜索的位置。
 let s1 = 'Hello world!';
 
 s1.startsWith('Hello'); // true
 s1.endsWith('!'); // true
 s1.includes('o'); // true
+
+// repeat方法返回一个新字符串，表示将原字符串重复n次。参数需是大于0的整数，如果是小数会取整，小于0会报错，参数如果是字符串会先转成数字
+'x'.repeat(3); // "xxx"
+'hello'.repeat(2); // "hellohello"
+'na'.repeat(0); // ""
+
+// 如果某个字符串不够指定长度，会在头部或尾部补全。如果第二参数省略，则默认用空格补全长度。
+'x'.padStart(5, 'ab'); // 'ababx'
+'x'.padStart(4, 'ab'); // 'abax'
+
+'x'.padEnd(5, 'ab'); // 'xabab'
+'x'.padEnd(4, 'ab'); // 'xaba'
+
+// 对字符串新增了两个方法trimStart()和trimEnd()，分别是去除字符串的首位空格。
+const s2 = '  abc  ';
+
+s2.trim(); // "abc"
+s2.trimStart(); // "abc  "
+s2.trimEnd(); // "  abc"
