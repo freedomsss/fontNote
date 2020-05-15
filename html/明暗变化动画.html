@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .test{
+      margin: 100px auto;
+      width: 200px;
+    }
+    .heart{
+      margin: 0 auto;
+      width: 100px;
+      animation: heartBreak 2s ease-in-out infinite;
+    }
+    @keyframes heartBreak {
+      0% {
+        opacity: 0;
+      }
+      25% {
+        opacity: .2;
+      }
+      50% {
+        opacity: .5;
+      }
+      75% {
+        opacity: .7;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="test">
+    <div class="heart">
+      <img src="../images/good.png" alt="">
+    </div>
+    <div>正在进入医联互联网医院</div>
+  </div>
+</body>
+</html>
