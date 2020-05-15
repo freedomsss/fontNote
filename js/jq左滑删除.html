@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,user-scalable=no">
+  <title>左划删除</title>
+  <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+  <style type="text/css">
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+.animate-slide-start {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.animate-slide {
+  -webkit-transform: translate3d(-55px, 0, 0);
+  -moz-transform: translate3d(-55px, 0, 0);
+  transform: translate3d(-55px, 0, 0);
+}
+
+.slide-wrapper {
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  border-bottom: 1px solid #ccc;
+}
+
+.slide-scroll {
+  height: 60px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.slide-content-button {
+  width: 55px;
+  height: 60px;
+}
+
+.slide-content-button button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: red;
+  color: #fff;
+}
+
+.slide-content {
+  float: left;
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+}
+</style>
+<script type="text/javascript">
+  $(function() {
+    //手指滑动多少距离就认为是滑成功
+    //这个值不能太大，否则影响斜着滑动时，垂直滑动的流畅性，也不能太小，太灵敏也不好
+    var diffXDistance = 50;
+
+    //当前滑动的对象
+    var currentObject;
+    //上一次滑动的对象
+    var lastObject;
+
+    //是否可以左右滑动，在上下滑的时候禁止左右滑
+    var canSlide = true;
+    //用于记录按下的点
+    var startPoint;
+
+
+    $(".slide-content").css({
+      width: $(".slide-wrapper").width()
+    });
+
+    $(".slide-scroll").css({
+      width: $(".slide-wrapper").width() + $(".slide-content-button").width()
+    })
+      .on('touchstart', function(e) {
+        currentObject = this;
+
+        startPoint = {
+          x: e.originalEvent.changedTouches[0].pageX,
+          y: e.originalEvent.changedTouches[0].pageY
+        };
+      })
+      .on('touchmove', function(e) {
+        //如果是左右滑动，就禁止上下的滑动
+        //如果是上下的滑动，就禁止左右滑动
+        if(Math.abs(e.originalEvent.changedTouches[0].pageX - startPoint.x) > Math.abs(e.originalEvent.changedTouches[0].pageY - startPoint.y)) {
+          event.preventDefault();
+        } else {
+          canSlide = false;
+        }
+      })
+      .on('touchend', function(e) {
+        //如果是上下滑动，这里就直接返回了
+        if(!canSlide) {
+          canSlide = true;
+          return true;
+        }
+
+        //点击除当前左滑对象之外的任意其他位置
+        if(lastObject && currentObject != lastObject) {
+          //右滑→
+          $(lastObject).removeClass("animate-slide");
+
+          //清空上一个左滑的对象
+          lastObject = undefined;
+        }
+
+        var diffX = e.originalEvent.changedTouches[0].pageX - startPoint.x;
+        if(diffX < -diffXDistance) {
+          //左滑←
+          $(currentObject).addClass("animate-slide");
+          if(lastObject && lastObject != currentObject) {
+            //右滑→
+            $(lastObject).removeClass("animate-slide");
+          }
+          //记录上一个左滑的对象
+          lastObject = currentObject;
+        } else if(diffX >= diffXDistance) {
+          if(currentObject == lastObject) {
+            //右滑→
+            $(currentObject).removeClass("animate-slide");
+            //清空上一个左滑的对象
+            lastObject = undefined;
+          }
+        }
+      });
+  });
+</script>
+</head>
+
+<body>
+<div class="slide-wrapper">
+  <div class="slide-scroll animate-slide-start">
+    <div class="slide-content">
+      <div>我是内容1</div>
+    </div>
+    <div class="slide-content-button"><button>删除</button></div>
+  </div>
+</div>
+<div class="slide-wrapper">
+  <div class="slide-scroll animate-slide-start">
+    <div class="slide-content">
+      <div>我是内容2</div>
+    </div>
+    <div class="slide-content-button"><button>删除</button></div>
+  </div>
+</div>
+<div class="slide-wrapper">
+  <div class="slide-scroll animate-slide-start">
+    <div class="slide-content">
+      <div>我是内容3</div>
+    </div>
+    <div class="slide-content-button"><button>删除</button></div>
+  </div>
+</div>
+<div class="slide-wrapper">
+  <div class="slide-scroll animate-slide-start">
+    <div class="slide-content">
+      <div>我是内容4</div>
+    </div>
+    <div class="slide-content-button"><button>删除</button></div>
+  </div>
+</div>
+<div class="slide-wrapper">
+  <div class="slide-scroll animate-slide-start">
+    <div class="slide-content">
+      <div>我是内容5</div>
+    </div>
+    <div class="slide-content-button"><button>删除</button></div>
+  </div>
+</div>
+<div class="slide-wrapper">
+  <div class="slide-scroll animate-slide-start">
+    <div class="slide-content">
+      <div>我是内容6</div>
+    </div>
+    <div class="slide-content-button"><button>删除</button></div>
+  </div>
+</div>
+<div class="slide-wrapper">
+  <div class="slide-scroll animate-slide-start">
+    <div class="slide-content">
+      <div>我是内容</div>
+    </div>
+    <div class="slide-content-button"><button>删除</button></div>
+  </div>
+</div>
+<div class="slide-wrapper">
+  <div class="slide-scroll animate-slide-start">
+    <div class="slide-content">
+      <div>我是内容</div>
+    </div>
+    <div class="slide-content-button"><button>删除</button></div>
+  </div>
+</div>
+<div class="slide-wrapper">
+  <div class="slide-scroll animate-slide-start">
+    <div class="slide-content">
+      <div>我是内容</div>
+    </div>
+    <div class="slide-content-button"><button>删除</button></div>
+  </div>
+</div>
+<div class="slide-wrapper">
+  <div class="slide-scroll animate-slide-start">
+    <div class="slide-content">
+      <div>我是内容</div>
+    </div>
+    <div class="slide-content-button"><button>删除</button></div>
+  </div>
+</div>
+<div class="slide-wrapper">
+  <div class="slide-scroll animate-slide-start">
+    <div class="slide-content">
+      <div>我是内容</div>
+    </div>
+    <div class="slide-content-button"><button>删除</button></div>
+  </div>
+</div>
+<div class="slide-wrapper">
+  <div class="slide-scroll animate-slide-start">
+    <div class="slide-content">
+      <div>我是内容</div>
+    </div>
+    <div class="slide-content-button"><button>删除</button></div>
+  </div>
+</div>
+<div class="slide-wrapper">
+  <div class="slide-scroll animate-slide-start">
+      <div class="slide-content">
+        <div>我是内容</div>
+      </div>
+      <div class="slide-content-button"><button>删除</button></div>
+  </div>
+</div>
+<script>
+  $('.slide-content-button').click(function (e) {
+    console.log('this:', this);
+    var parent = $(this).parent();
+    console.log('parent:', $(parent).parent());
+    $(parent).parent().fadeOut("slow");
+  });
+</script>
+</body>
+</html>
