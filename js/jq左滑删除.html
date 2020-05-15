@@ -10,6 +10,10 @@
     margin: 0;
     padding: 0;
   }
+  html,body{
+    width: 100%;
+    height: 100%;
+  }
 
 .animate-slide-start {
   -webkit-transition: all 0.2s ease-in-out;
@@ -81,6 +85,7 @@
       width: $(".slide-wrapper").width() + $(".slide-content-button").width()
     })
       .on('touchstart', function(e) {
+        e.stopPropagation();
         currentObject = this;
 
         startPoint = {
@@ -89,6 +94,7 @@
         };
       })
       .on('touchmove', function(e) {
+        e.stopPropagation();
         //如果是左右滑动，就禁止上下的滑动
         //如果是上下的滑动，就禁止左右滑动
         if(Math.abs(e.originalEvent.changedTouches[0].pageX - startPoint.x) > Math.abs(e.originalEvent.changedTouches[0].pageY - startPoint.y)) {
@@ -98,20 +104,21 @@
         }
       })
       .on('touchend', function(e) {
+        e.stopPropagation();
         //如果是上下滑动，这里就直接返回了
         if(!canSlide) {
           canSlide = true;
           return true;
         }
 
-        //点击除当前左滑对象之外的任意其他位置
-        if(lastObject && currentObject != lastObject) {
-          //右滑→
-          $(lastObject).removeClass("animate-slide");
-
-          //清空上一个左滑的对象
-          lastObject = undefined;
-        }
+        // //点击除当前左滑对象之外的任意其他位置
+        // if(lastObject && currentObject != lastObject) {
+        //   //右滑→
+        //   $(lastObject).removeClass("animate-slide");
+        //
+        //   //清空上一个左滑的对象
+        //   lastObject = undefined;
+        // }
 
         var diffX = e.originalEvent.changedTouches[0].pageX - startPoint.x;
         if(diffX < -diffXDistance) {
@@ -132,120 +139,146 @@
           }
         }
       });
+    $('body').click(function () {
+      //点击除当前左滑对象之外的任意其他位置
+      if(lastObject) {
+        console.log('body');
+        //右滑→
+        $(lastObject).removeClass("animate-slide");
+
+        //清空上一个左滑的对象
+        lastObject = undefined;
+      }
+    });
+    $('.slide-content').on('click', 'div', function (e) {
+      e.stopPropagation();
+      if (lastObject) {
+        console.log('右滑！');
+        //右滑→
+        $(lastObject).removeClass("animate-slide");
+        //清空上一个左滑的对象
+        lastObject = undefined;
+      } else {
+        console.log('查看详情！');
+      }
+    });
   });
 </script>
 </head>
 
 <body>
-<div class="slide-wrapper">
-  <div class="slide-scroll animate-slide-start">
-    <div class="slide-content">
-      <div>我是内容1</div>
+<div class="slider-box" id="sliderBox">
+  <div class="slide-wrapper">
+    <div class="slide-scroll animate-slide-start">
+      <div class="slide-content">
+        <div>我是内容1</div>
+      </div>
+      <div class="slide-content-button"><button>删除</button></div>
     </div>
-    <div class="slide-content-button"><button>删除</button></div>
   </div>
-</div>
-<div class="slide-wrapper">
-  <div class="slide-scroll animate-slide-start">
-    <div class="slide-content">
-      <div>我是内容2</div>
+  <div class="slide-wrapper">
+    <div class="slide-scroll animate-slide-start">
+      <div class="slide-content">
+        <div>我是内容2</div>
+      </div>
+      <div class="slide-content-button"><button>删除</button></div>
     </div>
-    <div class="slide-content-button"><button>删除</button></div>
   </div>
-</div>
-<div class="slide-wrapper">
-  <div class="slide-scroll animate-slide-start">
-    <div class="slide-content">
-      <div>我是内容3</div>
+  <div class="slide-wrapper">
+    <div class="slide-scroll animate-slide-start">
+      <div class="slide-content">
+        <div>我是内容3</div>
+      </div>
+      <div class="slide-content-button"><button>删除</button></div>
     </div>
-    <div class="slide-content-button"><button>删除</button></div>
   </div>
-</div>
-<div class="slide-wrapper">
-  <div class="slide-scroll animate-slide-start">
-    <div class="slide-content">
-      <div>我是内容4</div>
+  <div class="slide-wrapper">
+    <div class="slide-scroll animate-slide-start">
+      <div class="slide-content">
+        <div>我是内容4</div>
+      </div>
+      <div class="slide-content-button"><button>删除</button></div>
     </div>
-    <div class="slide-content-button"><button>删除</button></div>
   </div>
-</div>
-<div class="slide-wrapper">
-  <div class="slide-scroll animate-slide-start">
-    <div class="slide-content">
-      <div>我是内容5</div>
+  <div class="slide-wrapper">
+    <div class="slide-scroll animate-slide-start">
+      <div class="slide-content">
+        <div>我是内容5</div>
+      </div>
+      <div class="slide-content-button"><button>删除</button></div>
     </div>
-    <div class="slide-content-button"><button>删除</button></div>
   </div>
-</div>
-<div class="slide-wrapper">
-  <div class="slide-scroll animate-slide-start">
-    <div class="slide-content">
-      <div>我是内容6</div>
+  <div class="slide-wrapper">
+    <div class="slide-scroll animate-slide-start">
+      <div class="slide-content">
+        <div>我是内容6</div>
+      </div>
+      <div class="slide-content-button"><button>删除</button></div>
     </div>
-    <div class="slide-content-button"><button>删除</button></div>
   </div>
-</div>
-<div class="slide-wrapper">
-  <div class="slide-scroll animate-slide-start">
-    <div class="slide-content">
-      <div>我是内容</div>
-    </div>
-    <div class="slide-content-button"><button>删除</button></div>
-  </div>
-</div>
-<div class="slide-wrapper">
-  <div class="slide-scroll animate-slide-start">
-    <div class="slide-content">
-      <div>我是内容</div>
-    </div>
-    <div class="slide-content-button"><button>删除</button></div>
-  </div>
-</div>
-<div class="slide-wrapper">
-  <div class="slide-scroll animate-slide-start">
-    <div class="slide-content">
-      <div>我是内容</div>
-    </div>
-    <div class="slide-content-button"><button>删除</button></div>
-  </div>
-</div>
-<div class="slide-wrapper">
-  <div class="slide-scroll animate-slide-start">
-    <div class="slide-content">
-      <div>我是内容</div>
-    </div>
-    <div class="slide-content-button"><button>删除</button></div>
-  </div>
-</div>
-<div class="slide-wrapper">
-  <div class="slide-scroll animate-slide-start">
-    <div class="slide-content">
-      <div>我是内容</div>
-    </div>
-    <div class="slide-content-button"><button>删除</button></div>
-  </div>
-</div>
-<div class="slide-wrapper">
-  <div class="slide-scroll animate-slide-start">
-    <div class="slide-content">
-      <div>我是内容</div>
-    </div>
-    <div class="slide-content-button"><button>删除</button></div>
-  </div>
-</div>
-<div class="slide-wrapper">
-  <div class="slide-scroll animate-slide-start">
+  <div class="slide-wrapper">
+    <div class="slide-scroll animate-slide-start">
       <div class="slide-content">
         <div>我是内容</div>
       </div>
       <div class="slide-content-button"><button>删除</button></div>
+    </div>
+  </div>
+  <div class="slide-wrapper">
+    <div class="slide-scroll animate-slide-start">
+      <div class="slide-content">
+        <div>我是内容</div>
+      </div>
+      <div class="slide-content-button"><button>删除</button></div>
+    </div>
+  </div>
+  <div class="slide-wrapper">
+    <div class="slide-scroll animate-slide-start">
+      <div class="slide-content">
+        <div>我是内容</div>
+      </div>
+      <div class="slide-content-button"><button>删除</button></div>
+    </div>
+  </div>
+  <div class="slide-wrapper">
+    <div class="slide-scroll animate-slide-start">
+      <div class="slide-content">
+        <div>我是内容</div>
+      </div>
+      <div class="slide-content-button"><button>删除</button></div>
+    </div>
+  </div>
+  <div class="slide-wrapper">
+    <div class="slide-scroll animate-slide-start">
+      <div class="slide-content">
+        <div>我是内容</div>
+      </div>
+      <div class="slide-content-button"><button>删除</button></div>
+    </div>
+  </div>
+  <div class="slide-wrapper">
+    <div class="slide-scroll animate-slide-start">
+      <div class="slide-content">
+        <div>我是内容</div>
+      </div>
+      <div class="slide-content-button"><button>删除</button></div>
+    </div>
+  </div>
+  <div class="slide-wrapper">
+    <div class="slide-scroll animate-slide-start">
+      <div class="slide-content">
+        <div>我是内容</div>
+      </div>
+      <div class="slide-content-button"><button>删除</button></div>
+    </div>
   </div>
 </div>
 <script>
   $('.slide-content-button').click(function (e) {
-    console.log('this:', this);
+    e.stopPropagation();
+    // console.log('this:', this);
     var parent = $(this).parent();
-    console.log('parent:', $(parent).parent());
+    // console.log('parent:', $(parent).parent());
     $(parent).parent().fadeOut("slow");
   });
 </script>
