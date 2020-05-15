@@ -98,7 +98,7 @@
         //如果是左右滑动，就禁止上下的滑动
         //如果是上下的滑动，就禁止左右滑动
         if(Math.abs(e.originalEvent.changedTouches[0].pageX - startPoint.x) > Math.abs(e.originalEvent.changedTouches[0].pageY - startPoint.y)) {
-          event.preventDefault();
+          e.preventDefault();
         } else {
           canSlide = false;
         }
