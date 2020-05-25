@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>switch 开关</title>
+  <style>
+    body{
+      padding: 100px;
+    }
+    .switch-block{
+      width: 40px;
+      height: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+      background-color: #dcdfe6;
+      padding: 1px;
+    }
+    .switch-circle{
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #fff;
+      transition: all .3s ease-in-out;
+    }
+    .switch-on{
+      transform: translateX(20px);
+    }
+    .switch-off-bg{
+    }
+    .switch-on-bg{
+      background-color: #3bb3e0;
+    }
+    .switch-btn{
+      margin: 0;
+      display: inline-block;
+      position: relative;
+      width: 40px;
+      height: 20px;
+      border: 1px solid #dcdfe6;
+      outline: none;
+      border-radius: 10px;
+      box-sizing: border-box;
+      background: #dcdfe6;
+      cursor: pointer;
+      transition: border-color .3s,background-color .3s;
+      vertical-align: middle;
+    }
+    .switch-btn:after{
+      content: "";
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      border-radius: 100%;
+      transition: all .3s;
+      width: 16px;
+      height: 16px;
+      background-color: #fff;
+    }
+    .switch-btn-on:after{
+      left: 100%;
+      margin-left: -17px;
+    }
+  </style>
+</head>
+<body>
+<div class="switch-block">
+  <div class="switch-circle"></div>
+</div>
+
+<div class="switch-btn"></div>
+<script src='./circle/jquery.min.js'></script>
+<script>
+  var onOff1 = false;
+  var onOff2 = false;
+  var witchBtn1 = $('.switch-circle');
+  var witchBtn2 = $('.switch-block');
+  witchBtn2.click(function () {
+    if (onOff1) {
+      witchBtn1.removeClass('switch-on');
+      witchBtn2.removeClass('switch-on-bg');
+    } else {
+      witchBtn1.addClass('switch-on');
+      witchBtn2.addClass('switch-on-bg');
+    }
+    onOff1 = !onOff1;
+  });
+  var witchBtn3 = $('.switch-btn');
+  witchBtn3.on('click', function () {
+    if (onOff2) { // 关
+      $(this).css({"background-color":"#dcdfe6", "border-color":"#dcdfe6"});
+      $(this).removeClass('switch-btn-on');
+    } else { // 开
+      $(this).css({"background-color":"rgb(19, 206, 102)", "border-color":"rgb(19, 206, 102)"});
+      $(this).addClass('switch-btn-on');
+    }
+    onOff2 = !onOff2;
+  })
+</script>
+</body>
+</html>
