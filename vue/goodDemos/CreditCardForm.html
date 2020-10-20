@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>信用卡表单</title>
+  <link rel="stylesheet" href='./css/CreditCardForm.css'>
+</head>
+<body>
+  <div id="app">
+    <div class="form-block">
+      <div class="card-block">
+        <div class="card-container">
+          <div class="card-font">
+            <div class="card-header">
+              <div>LOGO</div>
+              <div>VISA</div>
+            </div>
+            <div class="card-item__focus" :class="{'-active' : focusElementStyle }" :style="focusElementStyle" ref="focusElement"></div>
+            <div class="card-number" ref="cardNum">
+            <span
+              v-for="(item, index) in cardNumberText.split('')"
+              :key="index"
+              :class="[item !== '#' ? 'change-ani' : 'change-ani2', item === ' ' ? 'blank-item' : '']"
+            >{{(item !== ' ' && item !== '#' && Number(index) > 4 && Number(index) < 14) ? '*' : item}}</span>
+              <!--<transition name="slide-fade-up">
+                <div class="card-item__name" v-if="cardNumberText.length" key="3">
+                  <transition-group name="slide-fade-right">
+                    <span v-for="(n, $index) in cardNumberText" v-if="$index === $index" :key="$index + 1">{{n}}</span>
+                  </transition-group>
+                </div>
+                <div class="card-item__name" v-else key="4">Full Name</div>
+              </transition>-->
+            </div>
+            <div class="card-name" ref="cardName">
+<!--              <span class="change-ani"-->
+<!--                    v-for="(item, index) in cardName.split('')"-->
+<!--                    :key="`${index}_cardName`"-->
+<!--              >{{item.toLocaleUpperCase()}}-->
+<!--              </span>-->
+              <transition name="slide-fade-up">
+                <div class="card-item__name" v-if="cardName.length" key="1">
+                  <transition-group name="slide-fade-right">
+                    <span v-for="(n, $index) in cardName" v-if="$index === $index" :key="$index + 1">{{n}}</span>
+                  </transition-group>
+                </div>
+                <div class="card-item__name" v-else key="2">Full Name</div>
+              </transition>
+            </div>
+          </div>
+          <div class="card-back">
+            我是反面
+          </div>
+        </div>
+      </div>
+      <div class="input-block">
+        <div class="title">Card Number</div>
+        <div class="inp">
+          <input type="text" v-model="cardNumber" @focus="inpFocus(1, $event)" maxlength="19"  @input="cardNameInput" data-ref="cardNum" @blur="inpBlur">
+        </div>
+      </div>
+      <div class="input-block">
+        <div class="title">Card Name</div>
+        <div class="inp">
+          <input type="text" v-model="cardName" @focus="inpFocus(2, $event)" data-ref="cardName" @blur="inpBlur">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var App = new Vue({
+      el: '#app',
+      data: {
+        cardNumber: '',
+        cardName: '',
+        cardNumberText: '#### #### #### ####',
+        amexCardMask: "#### ###### #####",
+        currentFocusIndex: -1,
+        currentActiveIndex: -1,
+        isInputFocused: false,
+        focusElementStyle: null,
+      },
+      computed: {},
+      mounted() {},
+      methods: {
+        inpFocus(index, e) {
+          this.currentFocusIndex = index;
+          this.isInputFocused = true;
+          let targetRef = e.target.dataset.ref;
+          let target = this.$refs[targetRef];
+          this.focusElementStyle = {
+            width: `${target.offsetWidth}px`,
+            height: `${target.offsetHeight}px`,
+            transform: `translateX(${target.offsetLeft}px) translateY(${target.offsetTop}px)`
+          }
+        },
+        cardNameInput() {
+          console.log('this.cardNumber:', this.cardNumber);
+          // this.addSpace(this.cardNumber);
+          this.cardNumber = this.addSpace(this.cardNumber);
+          // this.cardNumberText = this.cardNumber;
+          this.renderCardText(this.cardNumber);
+        },
+        addSpace(str) {
+          if (!str) {
+            return;
+          }
+          const _str = (str.replace(/\s+/g,"")).split('');
+          const len = _str.length;
+          let newStr = [];
+          console.log('_str:', _str);
+          for (let i = 0; i < len; i++) {
+            newStr.push(_str[i]);
+            if (i % 4 === 3) {
+              newStr.push(',')
+            }
+          }
+          console.log(newStr.join(''), '----', (newStr.join('')).replace(/,/g, ' '));
+          const _newStr = newStr.join('').replace(/,/g, ' ');
+          return _newStr.replace(/^\s+|\s+$/g,"");
+        },
+        renderCardText(str) {
+          if (!str) {
+            str = '';
+          }
+          const _str1 = str.split('');
+          const len1 = _str1.length;
+          const { cardNumberText } = this;
+          const _str2 = cardNumberText.split('');
+          const len2 = _str2.length;
+          for (let i = 0; i < len1; i++) {
+            _str2[i] = _str1[i];
+          }
+          for (let j = len1; j < len2; j++) {
+            if (_str2[j] !== ' ') {
+              _str2[j] = '#';
+            }
+          }
+          console.log(_str1.join(''),_str2.join(''));
+          this.cardNumberText = _str2.join('');
+          this.currentActiveIndex = this.cardNumber && this.cardNumber.length ? this.cardNumber.length : 0;
+        },
+        inpBlur() {
+          let vm = this;
+          setTimeout(() => {
+            if (!vm.isInputFocused) {
+              vm.focusElementStyle = null;
+            }
+          }, 100);
+          vm.isInputFocused = false;
+        },
+      },
+    });
+  </script>
+</body>
+</html>
