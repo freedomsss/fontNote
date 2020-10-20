@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>vue3了解</title>
+</head>
+<body>
+<div id="APP">
+  Counter: {{ counter }}
+  <ol>
+    <todo-item
+      v-for="item in groceryList"
+      v-bind:todo="item"
+      v-bind:key="item.id"
+    ></todo-item>
+    <p-item
+      v-for="item in groceryList"
+      v-bind:todo="item"
+      v-bind:key="item.id"
+    ></p-item>
+  </ol>
+</div>
+<script src="https://unpkg.com/vue@next"></script>
+<script>
+  const APPData = {
+    data() {
+      return {
+        counter: 1,
+        groceryList: [
+          { id: 0, text: 'Vegetables' },
+          { id: 1, text: 'Cheese' },
+          { id: 2, text: 'Whatever else humans are supposed to eat' }
+        ]
+      }
+    }
+  };
+  const APP = Vue.createApp(APPData);
+  APP.component('todo-item', {
+    props: ['todo'],
+    template: `<li>{{ todo.text }}</li>`
+  });
+  APP.component('p-item', {
+    props: ['todo'],
+    template: `<p>{{ todo.text }}</p>`
+  });
+
+  APP.mount('#APP');
+  
+  console.log('test APP data', APP)
+
+</script>
+</body>
+</html>
