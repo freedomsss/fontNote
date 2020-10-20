@@ -32,9 +32,6 @@ body {
   align-self: center;
   padding: 10px 16px;
 }
-.form-block .card-block .card-number span {
-  position: relative;
-}
 .form-block .card-block .card-number .blank-item {
   display: inline-block;
   margin: 0 10px;

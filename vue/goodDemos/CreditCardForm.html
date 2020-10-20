@@ -17,19 +17,33 @@
             </div>
             <div class="card-item__focus" :class="{'-active' : focusElementStyle }" :style="focusElementStyle" ref="focusElement"></div>
             <div class="card-number" ref="cardNum">
-            <span
-              v-for="(item, index) in cardNumberText.split('')"
-              :key="index"
+           <!-- <span
+              v-for="(item, $index) in cardNameTextArr"
+              :key="$index"
               :class="[item !== '#' ? 'change-ani' : 'change-ani2', item === ' ' ? 'blank-item' : '']"
-            >{{(item !== ' ' && item !== '#' && Number(index) > 4 && Number(index) < 14) ? '*' : item}}</span>
-              <!--<transition name="slide-fade-up">
-                <div class="card-item__name" v-if="cardNumberText.length" key="3">
-                  <transition-group name="slide-fade-right">
-                    <span v-for="(n, $index) in cardNumberText" v-if="$index === $index" :key="$index + 1">{{n}}</span>
-                  </transition-group>
-                </div>
-                <div class="card-item__name" v-else key="4">Full Name</div>
-              </transition>-->
+            >
+              {{ $index < cardNameArr.length ? ((cardNameArr[$index] !== ' ' && $index > 4 && $index < 14) ? '*' : cardNameArr[$index]) : item}}
+            </span>-->
+              <template v-for="(n, $index) in cardNameTextArr">
+                  <transition name="slide-fade-up">
+                    <span
+                      class="card-item__numberItem"
+                      :class="n === ' ' ? 'blank-item' : ''"
+                      v-if="$index > 4 && $index < 14 && cardNameArr.length > $index && n.trim() !== ''"
+                    >*</span>
+                    <span class="card-item__numberItem"
+                         :class="{ 'blank-item' : n.trim() === '' }"
+                         :key="$index" v-else-if="cardNameArr.length > $index">
+                      {{cardNameArr[$index]}}
+                    </span>
+                    <span
+                      class="card-item__numberItem"
+                      :class="{ 'blank-item' : n.trim() === '' }"
+                      v-else
+                      :key="$index + 1"
+                    >{{n}}</span>
+                  </transition>
+                </template>
             </div>
             <div class="card-name" ref="cardName">
 <!--              <span class="change-ani"-->
@@ -80,7 +94,14 @@
         isInputFocused: false,
         focusElementStyle: null,
       },
-      computed: {},
+      computed: {
+        cardNameArr()  {
+          return this.cardNumber ? this.cardNumber.split('') : []
+        },
+        cardNameTextArr() {
+          return this.cardNumberText.split('')
+        }
+      },
       mounted() {},
       methods: {
         inpFocus(index, e) {
@@ -99,7 +120,7 @@
           // this.addSpace(this.cardNumber);
           this.cardNumber = this.addSpace(this.cardNumber);
           // this.cardNumberText = this.cardNumber;
-          this.renderCardText(this.cardNumber);
+          // this.renderCardText(this.cardNumber);
         },
         addSpace(str) {
           if (!str) {
