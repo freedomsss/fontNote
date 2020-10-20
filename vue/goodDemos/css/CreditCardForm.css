@@ -2,6 +2,10 @@ html,
 body {
   background-color: #d9ecf2;
 }
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+}
 .form-block {
   width: 600px;
   box-sizing: border-box;
@@ -30,7 +34,22 @@ body {
 }
 .form-block .card-block .card-number {
   align-self: center;
-  padding: 10px 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: #fff;
+  font-size: 27px;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.form-block .card-block .card-number span {
+  display: inline-block;
+  font-weight: 500;
+  line-height: 1;
+  color: #fff;
+  font-size: 22px;
+  width: 14px;
+  min-width: 14px;
 }
 .form-block .card-block .card-number .blank-item {
   display: inline-block;
@@ -44,7 +63,6 @@ body {
 .form-block .card-block .card-name span {
   display: inline-block;
   width: auto;
-  position: relative;
   font-size: 14px;
   line-height: 14px;
   letter-spacing: 0;
@@ -75,7 +93,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #212121;
+  background-color: #000;
 }
 .form-block .card-container .card-back {
   transform: rotateY(-180deg);

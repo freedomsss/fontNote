@@ -54,7 +54,7 @@
               <transition name="slide-fade-up">
                 <div class="card-item__name" v-if="cardName.length" key="1">
                   <transition-group name="slide-fade-right">
-                    <span v-for="(n, $index) in cardName" v-if="$index === $index" :key="$index + 1">{{n}}</span>
+                    <span v-for="(n, $index) in cardName" v-if="$index === $index" :key="$index + 1">{{n.toLocaleUpperCase()}}</span>
                   </transition-group>
                 </div>
                 <div class="card-item__name" v-else key="2">Full Name</div>
@@ -69,13 +69,13 @@
       <div class="input-block">
         <div class="title">Card Number</div>
         <div class="inp">
-          <input type="text" v-model="cardNumber" @focus="inpFocus(1, $event)" maxlength="19"  @input="cardNameInput" data-ref="cardNum" @blur="inpBlur">
+          <input type="text" v-model="cardNumber" @focus="inpFocus(1, $event)" maxlength="19"  @input="cardNameInput()" data-ref="cardNum" @blur="inpBlur">
         </div>
       </div>
       <div class="input-block">
         <div class="title">Card Name</div>
         <div class="inp">
-          <input type="text" v-model="cardName" @focus="inpFocus(2, $event)" data-ref="cardName" @blur="inpBlur">
+          <input type="text" v-model="cardName" @focus="inpFocus(2, $event)" data-ref="cardName" @blur="inpBlur" maxlength="20">
         </div>
       </div>
     </div>
@@ -115,12 +115,15 @@
             transform: `translateX(${target.offsetLeft}px) translateY(${target.offsetTop}px)`
           }
         },
-        cardNameInput() {
+        cardNameInput(e) {
           console.log('this.cardNumber:', this.cardNumber);
           // this.addSpace(this.cardNumber);
           this.cardNumber = this.addSpace(this.cardNumber);
           // this.cardNumberText = this.cardNumber;
           // this.renderCardText(this.cardNumber);
+          this.$nextTick(() => {
+            this.inpFocus(1, e)
+          })
         },
         addSpace(str) {
           if (!str) {
