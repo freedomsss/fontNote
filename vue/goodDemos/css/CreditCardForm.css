@@ -57,8 +57,6 @@ body {
 }
 .form-block .card-block .card-name {
   padding: 10px 16px;
-  height: 40px;
-  box-sizing: border-box;
 }
 .form-block .card-block .card-name span {
   display: inline-block;
