@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>水波纹效果</title>
+</head>
+<body>
+  <canvas id="demo"></canvas>
+  <script>
+    // 正弦曲线公式：y = A sin(Bx + C) + D
+    // 振幅是 A，A 值越大，曲线更陡峭
+    // 周期是 2π/B，B 值大于 1 时，B 值越大，周期越短.B 值小于1,大于 0 时，周期变长
+    // 相移是 −C/B，在 B 不变的情况，C 为正值时，曲线向左移动，C 为负值时，曲线向右移动
+    // 垂直位移是 D，控制曲线上下移动
+    // y = A sin(Bx + C) + D，曲线的高度有 A 和 D 决定，A 控制波浪的高度，实际水位还是由 D 来控制。
+    
+    let xOffset = 0; // 初始偏移
+    let speed = 0.1; // 偏移速度
+    const canvasWidth = 500;
+    const canvasHeight = 500;
+    let isDrawCircle = false;
+    // 水位数值
+    let rangeValue = 0.6;
+    // 初始水位
+    let nowRange = 0;
+    // 波浪颜色
+    let colors = ['#DBB77A', '#BF8F3B'];
+
+    requestAnimationFrame(draw);
+
+
+    // 根据定义波浪的参数配置，通过公式：y = 波浪高度 * sin(x * 波浪宽度 + 水平位移)
+    function drawSin(ctx, xOffset, nowRange) {
+      const points = [];
+      // const canvasWidth = canvasWidth;
+      // const canvasHeight = canvasHeight;
+      const startX = 0;
+      const waveWidth = 0.05; // 波浪宽度，数越小越宽
+      const waveHeight = 20; // 波浪高度，数越大 越高
+      const waveOffset = xOffset; // 水平位移
+      ctx.beginPath();
+      
+      for (let x = startX; x < startX + canvasWidth; x += 20 / canvasWidth) {
+        const y = waveHeight * Math.sin((startX + x) * waveWidth + waveOffset);
+        points.push([x, (1 - nowRange) * canvasHeight + y]);
+        ctx.lineTo(x, (1 - nowRange) * canvasHeight + y);
+      }
+      ctx.lineTo(canvasWidth, canvasHeight);
+      ctx.lineTo(startX, canvasHeight);
+      ctx.lineTo(points[0][0], points[0][1]);
+      
+      ctx.stroke();
+    }
+    
+    
+    function draw() {
+      const canvas = document.getElementById('demo');
+      canvas.height = canvasHeight;
+      canvas.width = canvasWidth;
+      // 取得绘图上下文：通过canvas对象的getContext("2d")方法，获得2D环境；如果要获取三维上下文，使用"webgl"
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // if (!isDrawCircle) {
+      //   drawCircle(ctx);
+      // }
+      drawCircle(ctx);
+
+      drawSin(ctx, xOffset, nowRange);
+      drawSin(ctx, xOffset + 10, nowRange);
+
+      xOffset += speed;
+      
+      if (nowRange < rangeValue) {
+        nowRange += 0.01;
+      }
+
+      requestAnimationFrame(draw);
+    }
+    
+    function drawCircle(ctx) {
+      const r = canvasWidth / 2;
+      const lineWidth = 5;
+      const cR = r - lineWidth;
+      ctx.linewidth = lineWidth;
+      ctx.beginPath();
+      ctx.arc(r, r, cR, 0, 2 * Math.PI);
+
+      ctx.fillStyle = getChartColor(ctx);
+      ctx.fill();
+      
+      ctx.stroke();
+      ctx.clip();
+      isDrawCircle = true;
+    }
+    
+    function getChartColor(ctx) {
+      const radius = canvasWidth / 2;
+      const grd = ctx.createLinearGradient(radius, radius, radius, canvasHeight);
+      grd.addColorStop(0, colors[0]);
+      grd.addColorStop(1, colors[1]);
+      return grd;
+    }
+  </script>
+</body>
+</html>
