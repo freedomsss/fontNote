@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>有趣的图形</title>
+  <style>
+    body{
+      background-color: #e3e3e3;
+    }
+    .yin-yang{
+      width: 100px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #000;
+      border-width: 2px 2px 50px 2px;
+      border-color: #fff;
+      border-style: solid;
+      position: relative;
+      /*overflow: hidden;*/
+    }
+    .yin-yang:before{
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #fff;
+      border: 20px solid #000;
+      position: absolute;
+      top: 25px;
+      left: 0;
+    }
+    .yin-yang:after{
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #000;
+      border: 20px solid #fff;
+      position: absolute;
+      top: 25px;
+      right: 0;
+    }
+    /*.bottom{*/
+    /*  width: 100px;*/
+    /*  height: 50px;*/
+    /*  position: absolute;*/
+    /*  !*border-radius: 50%;*!*/
+    /*  background-color: #fff;*/
+    /*  bottom: 0;*/
+    /*  right: 0;*/
+    /*}*/
+    /*.left{*/
+    /*  width: 25px;*/
+    /*  height: 25px;*/
+    /*  position: absolute;*/
+    /*  border-radius: 50%;*/
+    /*  background-color: #000;*/
+    /*  top: 37.5px;*/
+    /*  left: 12.5px;*/
+    /*  z-index: 2;*/
+    /*}*/
+    /*.right{*/
+    /*  width: 25px;*/
+    /*  height: 25px;*/
+    /*  position: absolute;*/
+    /*  border-radius: 50%;*/
+    /*  background-color: #fff;*/
+    /*  top: 37.5px;*/
+    /*  right: 12.5px;*/
+    /*  z-index: 2;*/
+    /*}*/
+    #yin-yang {
+      width: 96px;
+      height: 48px;
+      background: #eee;
+      border-color: red;
+      border-style: solid;
+      border-width: 2px 2px 50px 2px;
+      border-radius: 100%;
+      position: relative;
+    }
+
+    #yin-yang:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      background: #eee;
+      border: 18px solid red;
+      border-radius: 100%;
+      width: 12px;
+      height: 12px;
+    }
+
+    #yin-yang:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: red;
+      border: 18px solid #eee;
+      border-radius:100%;
+      width: 12px;
+      height: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="yin-yang">
+<!--    <div class="bottom"></div>-->
+<!--    <div class="left"></div>-->
+<!--    <div class="right"></div>-->
+  </div>
+
+  <div id="yin-yang"></div>
+</body>
+</html>
