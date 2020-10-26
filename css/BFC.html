@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .parentBox{
+      padding: 20px;
+      border: 1px solid #3CC51F;
+      /*position: relative;*/
+      width: 200px;
+      overflow: hidden;
+    }
+    .childBox{
+      width: 100px;
+      height: 100px;
+      border: 1px solid #CE3C39;
+      /*position: absolute;*/
+      /*display: inline-block;*/
+      margin: 20px;
+      /*float: left;*/
+  
+    }
+    .fl{
+      /*float: right;*/
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="parentBox">
+    <div class="childBox">1</div>
+    <div class=" fl">
+      <div class="childBox">2</div>
+    </div>
+  </div>
+</body>
+</html>
