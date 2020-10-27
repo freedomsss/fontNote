@@ -1,3 +1,5 @@
+node_modules
+/nodeJs/node_modules
 
 # Editor directories and files
 .idea

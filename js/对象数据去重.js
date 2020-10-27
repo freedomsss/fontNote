@@ -108,7 +108,14 @@ function unique(arr){
   }
   return arr;
 }
+
+function uniqArr10(arr){
+  const s = new Set();
+  arr.forEach(x => s.add(x));
+  return [...s]
+}
 var arr = [1,1,'true','true',true,true,15,15,false,false,'true', undefined,undefined, null,null, NaN, NaN,'NaN', 0, 0, 'a', 'a',{},{}];
 console.log(unique(arr));
+console.log(uniqArr10(arr));
 
 
